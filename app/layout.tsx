@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./_lib/header/header";
 import Footer from "./_lib/footer/footer";
+import { ErrorWrapper } from "./error-wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,9 @@ export default function RootLayout({
       >
         <Header/>
         <div style={{height: 'calc(100vh - 7.5rem)'}} className="flex items-center justify-center">
-          {children}
+          <ErrorWrapper>
+            {children}
+          </ErrorWrapper>
         </div>
         <Footer/>
       </body>
